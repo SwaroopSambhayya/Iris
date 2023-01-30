@@ -5,7 +5,9 @@ A Interactive ChatGPT like voice bot powered by GPT-3 built in Flutter!
 ## Getting Started
 
 Add your OpenAI key in lib/shared/keys.dart.
+
 You can Generate your key at https://beta.openai.com/account/api-keys
+
 ![Screenshot 2023-01-30 at 3 49 45 PM](https://user-images.githubusercontent.com/31922733/215451043-15b1ab22-6459-4216-a656-e7e849019926.png)
 
 ![Screenshot 2023-01-30 at 3 52 19 PM](https://user-images.githubusercontent.com/31922733/215451083-35c7988d-abcd-4eea-a277-d0b54b9dd076.png)

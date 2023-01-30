@@ -10,9 +10,10 @@ You can Generate your key at https://beta.openai.com/account/api-keys
 
 ![Screenshot 2023-01-30 at 3 49 45 PM](https://user-images.githubusercontent.com/31922733/215451043-15b1ab22-6459-4216-a656-e7e849019926.png)
 
+![Screenshot 2023-01-30 at 3 51 44 PM](https://user-images.githubusercontent.com/31922733/215451070-85ecd667-627c-44b7-aac6-24be6ecbe318.png)
+
 ![Screenshot 2023-01-30 at 3 52 19 PM](https://user-images.githubusercontent.com/31922733/215451083-35c7988d-abcd-4eea-a277-d0b54b9dd076.png)
 
-![Screenshot 2023-01-30 at 3 51 44 PM](https://user-images.githubusercontent.com/31922733/215451070-85ecd667-627c-44b7-aac6-24be6ecbe318.png)
 
 This project is a starting point for a Flutter application.
 

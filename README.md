@@ -8,6 +8,9 @@ Add your OpenAI key in lib/shared/keys.dart.
 
 You can Generate your key at https://beta.openai.com/account/api-keys
 
+![Dribbble shot HD - 1 (1)](https://user-images.githubusercontent.com/31922733/215474636-94ef910e-edee-44e7-9068-c3635a56ce07.png)
+
+
 ![Screenshot 2023-01-30 at 3 49 45 PM](https://user-images.githubusercontent.com/31922733/215451043-15b1ab22-6459-4216-a656-e7e849019926.png)
 
 ![Screenshot 2023-01-30 at 3 51 44 PM](https://user-images.githubusercontent.com/31922733/215451070-85ecd667-627c-44b7-aac6-24be6ecbe318.png)

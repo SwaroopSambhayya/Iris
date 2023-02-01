@@ -108,12 +108,11 @@ packages:
   chat_gpt_sdk:
     dependency: "direct main"
     description:
-      path: "."
-      ref: HEAD
-      resolved-ref: "3e7ecf0dd83f11ae9dea026d023c73502324d87c"
-      url: "https://github.com/iampawan/Flutter-ChatGPT.git"
-    source: git
-    version: "1.0.2"
+      name: chat_gpt_sdk
+      sha256: c04500acc23bbde634b52b8978a30cee672f6718f8676aba3b9690adfd36ca23
+      url: "https://pub.dev"
+    source: hosted
+    version: "1.0.2+3"
   checked_yaml:
     dependency: transitive
     description:

@@ -1,5 +1,6 @@
-import 'package:chat_gpt_api/app/chat_gpt.dart';
-import 'package:chat_gpt_api/app/model/data_model/completion/completion_request.dart';
+// import 'package:chat_gpt_api/chat_gpt.dart';
+import 'package:chat_gpt_sdk/chat_gpt_sdk.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:lets_chat/features/home/models/chat.dart';
 import 'package:lets_chat/features/home/models/conversation_state_model.dart';
@@ -35,7 +36,8 @@ class ChatRepo extends StateNotifier<ConversationState> {
     tts = TextToSpeech();
     tts.setRate(1);
     tts.speak(defaultWelcomeGreet);
-    chatGpt = ChatGPT.builder(token: secretToken);
+    chatGpt = ChatGPT.instance
+        .builder(secretToken, baseOption: HttpSetup(receiveTimeout: 6000));
   }
 
   void changeRecognizedWords(String words) {
@@ -61,24 +63,23 @@ class ChatRepo extends StateNotifier<ConversationState> {
   void sendMessage(String message) async {
     state = state.copyWith(loadingResponse: true);
     try {
-      var botResponse = await chatGpt.textCompletion(
-        request: CompletionRequest(
-            prompt: message,
-            maxTokens: 256,
-            presencePenalty: 0,
-            temperature: 0.7),
-      );
+      final request = CompleteReq(
+          prompt: message, model: kTranslateModelV3, max_tokens: 200);
 
-      tts.speak(botResponse!.choices!.first.text!.trim());
-      state = state.copyWith(loadingResponse: false, chatList: [
-        ...state.chatList,
-        Chat(
-            isMe: false,
-            message: botResponse.choices!.first.text!.trim(),
-            time: DateTime.now()),
-      ]);
+      chatGpt.onCompleteStream(request: request).listen((response) {
+        tts.speak(response!.choices.first.text.trim());
+        state = state.copyWith(loadingResponse: false, chatList: [
+          ...state.chatList,
+          Chat(
+              isMe: false,
+              message: response.choices.first.text.trim(),
+              time: DateTime.now()),
+        ]);
+      }, onError: (err) {
+        debugPrint("Error: " + err.toString());
+      });
     } catch (e) {
-      print(e);
+      print("error send: " + e.toString());
     }
   }
 

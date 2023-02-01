@@ -1,1 +1,1 @@
-const secretToken = "Your secret key";
+const secretToken = "";
